@@ -6,10 +6,10 @@ number = random.sample(numbers, 4)
 
 tries = 10
 
-print("This program randomly generates a 4-digit number and asks you to guess a 4-digit number.\nFor every digit that"
+print("This program randomly generates a 4-digit number and asks you to guess the number.\nFor every digit that"
       "the user guessed correctly in the correct place, they have a COW.\nFor every digit the user guessed correctly"
-      "in the wrong place is a BULL.\nEvery time the you make a guess, it tells you how many COWS and BULLS you"
-      "have.\nOnce the you guess the correct number, the game is over.\n")
+      "in the wrong place is a BULL.\nEvery time you make a guess, it tells you how many COWS and BULLS you"
+      "have.\nOnce the you guess the correct number, the game is over.\nPlace the numbers in an order like : 1 2 3 4")
 
 print("Guess the 4 digits of a number with spaces in between digits, there are no duplicates")
 print("You have %s tries" % tries)
