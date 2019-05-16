@@ -1,0 +1,36 @@
+import random
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+number = random.sample(numbers, 4)
+
+tries = 10
+
+print("This program randomly generates a 4-digit number and asks you to guess a 4-digit number.\nFor every digit that"
+      "the user guessed correctly in the correct place, they have a COW.\nFor every digit the user guessed correctly"
+      "in the wrong place is a BULL.\nEvery time the you make a guess, it tells you how many COWS and BULLS you"
+      "have.\nOnce the you guess the correct number, the game is over.\n")
+
+print("Guess the 4 digits of a number with spaces in between digits, there are no duplicates")
+print("You have %s tries" % tries)
+
+while True:
+    bulls, cows = 0, 0
+    guess = [int(x) for x in input("\nGuess the digits : ").split()]  # splits the guess into 4 digits
+    if len(guess) != 4:
+        print("You must enter 4 digits with places in between\n")
+    else:
+        for i in range(4):
+            if guess[i] == number[i]:  # if a number is on the same spot in 2 lists
+                cows += 1
+            elif guess[i] in number:  # if a number is in both lists but different spots
+                bulls += 1
+        tries -= 1
+        print("Bulls : %s\nCows : %s\nTries left : %s " % (bulls, cows, tries))
+        if guess == number:
+            print("Congratulations, you won the game in %s tries" % (10 - tries))
+            break
+        elif tries == 0:
+            print("Out of tries, you lose")
+            print("The number was %s" % "".join(str(x) for x in number))
+            break
